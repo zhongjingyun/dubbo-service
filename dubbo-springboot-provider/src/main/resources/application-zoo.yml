@@ -1,0 +1,31 @@
+server:
+  port: 8100
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: zookeeper://localhost:2181
+  metadata-report:
+    address: zookeeper://localhost:2181
+  config-center:
+    address: zookeeper://localhost:2181
+#    parameters:
+#      namespace: ad03e148-c6af-4450-9cb7-55b4a753c150
+  provider: # Dubbo 服务端配置
+    group: dev
+    cluster: failfast # 集群方式,可选: failover/failfast/failsafe/failback/forking
+    retries: 0 # 远程服务调用重试次数, 不包括第一次调用, 不需要重试请设为0
+    timeout: 600000 # 远程服务调用超时时间(毫秒)
+    token: false # 令牌验证, 为空表示不开启, 如果为true, 表示随机生成动态令牌
+    dynamic: true # 服务是否动态注册, 如果设为false, 注册后将显示后disable状态, 需人工启用, 并且服务提供者停止时, 也不会自动取消册, 需人工禁用.
+    delay: -1 # 延迟注册服务时间(毫秒)- , 设为-1时, 表示延迟到Spring容器初始化完成时暴露服务
+    version: 1.0.0 # 服务版本
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+        server-addr: 127.0.0.1:8848
+        namespace: ad03e148-c6af-4450-9cb7-55b4a753c150

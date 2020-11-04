@@ -1,0 +1,6 @@
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://192.168.31.37:8848?namespace=ad03e148-c6af-4450-9cb7-55b4a753c150

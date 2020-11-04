@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: dubbo-spring-cloud-provider
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: zoo
+logging:
+  level:
+    root: info

@@ -1,0 +1,22 @@
+server:
+  port: 8001
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://192.168.31.37:8848
+#    parameters:
+#      namespace: ad03e148-c6af-4450-9cb7-55b4a753c150
+  consumer: # Dubbo 消费端配置
+    group: dev
+    check: false
+    validation: true # 是否启用JSR303标准注解验证, 如果启用, 将对方法参数上的注解进行校验
+    version: 1.0.0 # 默认版本
+spring:
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+        server-addr: 192.168.60.79:8848
+        namespace: ad03e148-c6af-4450-9cb7-55b4a753c150

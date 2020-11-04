@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: dubbo-spring-cloud-consumer
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: 2
+logging:
+  level:
+    root: info
